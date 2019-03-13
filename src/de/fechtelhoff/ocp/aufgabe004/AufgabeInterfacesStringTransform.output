@@ -1,0 +1,27 @@
+
+Starts here ...
+
+===== Initial Array =====
+[mo, di, mi]
+
+===== Using simple transform Method =====
+[MO, DI, MI]
+
+===== Using tranform Classes =====
+[MO, DI, MI]
+
+[mo., di., mi.]
+
+[Mo, Di, Mi]
+
+[mo(2), di(2), mi(2)]
+
+===== Using transform with Lambdas =====
+[MO, DI, MI]
+
+[Mo., Di., Mi.]
+
+[Mo. (2), Di. (2), Mi. (2)]
+
+
+...that's it!
