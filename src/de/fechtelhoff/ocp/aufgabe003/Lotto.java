@@ -4,16 +4,24 @@ import java.util.Arrays;
 
 public abstract class Lotto {
 
-	protected int anzahlKugelnGesamt;
-	protected int[] lottoZahlen;
+	private int anzahlKugelnGesamt;
+	private int[] lottoZahlen;
 
 	public Lotto(int anzahlKugeln, int anzahlKugelnGesamt) {
 		this.anzahlKugelnGesamt = anzahlKugelnGesamt;
 		lottoZahlen = new int[anzahlKugeln];
 	}
 
+	public int getAnzahlKugelnGesamt() {
+		return anzahlKugelnGesamt;
+	}
+
 	public int[] getLottoZahlen() {
-		return lottoZahlen;
+		return lottoZahlen.clone();
+	}
+
+	public void lottoZahlenErzeugen() {
+		ArrayUtil.initializeArrayWithRandom(lottoZahlen, anzahlKugelnGesamt);
 	}
 
 	public String toString(String str) {

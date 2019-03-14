@@ -19,7 +19,7 @@ class ToUpperCase implements Transformation {
 class ToCamelCase implements Transformation {
 	@Override
 	public String execute(String input) {
-		return input.substring(0, 1).toUpperCase() + input.substring(1);
+		return input.toUpperCase().charAt(0) + input.substring(1);
 	}
 }
 
@@ -35,6 +35,9 @@ class AddLength implements Transformation {
 	public String execute(String input) {
 		return input + "(" + input.length() + ")";
 	}
+}
+
+interface UCS extends UnaryOperator<String> {
 }
 
 public class AufgabeInterfacesStringTransform {
@@ -55,7 +58,7 @@ public class AufgabeInterfacesStringTransform {
 		return list;
 	}
 
-	private static List<String> transformWithLambda(String[] array, UnaryOperator<String> operator) {
+	private static List<String> transform(String[] array, UnaryOperator<String> operator) {
 		List<String> list = Arrays.asList(array.clone());
 		list.replaceAll(operator);
 		return list;
@@ -67,7 +70,7 @@ public class AufgabeInterfacesStringTransform {
 		String[] array = { "mo", "di", "mi" };
 
 		System.out.println("===== Initial Array =====");
-		
+
 		System.out.println(Arrays.toString(array) + "\n");
 
 		System.out.println("===== Using simple transform Method =====");
@@ -86,11 +89,11 @@ public class AufgabeInterfacesStringTransform {
 
 		System.out.println("===== Using transform with Lambdas =====");
 
-		System.out.println(transformWithLambda(array, e -> e.toUpperCase()) + "\n");
+		System.out.println(transform(array, (UCS) e -> e.toUpperCase()) + "\n");
 
-		System.out.println(transformWithLambda(array, e -> e.substring(0, 1).toUpperCase() + e.substring(1) + ".") + "\n");
-		
-		System.out.println(transformWithLambda(array, e -> e.substring(0, 1).toUpperCase() + e.substring(1) + ". (" + e.length() + ")") + "\n");
+		System.out.println(transform(array, (UCS) e -> e.toUpperCase().charAt(0) + e.substring(1) + ".") + "\n");
+
+		System.out.println(transform(array, (UCS) e -> e.toUpperCase().charAt(0) + e.substring(1) + ". (" + e.length() + ")") + "\n");
 
 		System.out.println("\n...that's it!\n");
 	}

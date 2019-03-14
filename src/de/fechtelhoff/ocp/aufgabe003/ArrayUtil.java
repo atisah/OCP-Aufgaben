@@ -7,10 +7,11 @@ public class ArrayUtil {
 
 	public static void initializeArrayWithRandom(int[] array, int maxNumber) {
 		int number;
+		Random random = new Random();
 		for (int i = 0; i < array.length; i++) {
 			Arrays.sort(array, 0, i);
 			do {
-				number = new Random().nextInt(maxNumber) + 1;
+				number = random.nextInt(maxNumber) + 1;
 			} while (Arrays.binarySearch(array, 0, i, number) >= 0);
 			array[i] = number;
 		}

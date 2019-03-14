@@ -17,7 +17,7 @@ public class AufgabeInterfacesComparableComparator {
 				new Person("John", "Black"),
 				new Person("John", "Black"),
 				new Person("John", "Smith"),
-			};
+		};
 
 		// Optional: ein weiteres Attribut 'geburtsjahr' in der Klasse 'Person'
 		// definieren
@@ -30,7 +30,7 @@ public class AufgabeInterfacesComparableComparator {
 				new Person("John", "Black", "03.02.1982"),
 				new Person("John", "Black", "02.02.1982"),
 				new Person("John", "Smith", "07.03.2019"),
-			};
+		};
 
 		personenArray = personenArrayWithBirthday;
 
@@ -63,27 +63,20 @@ public class AufgabeInterfacesComparableComparator {
 		ascendingSort(personenArray);
 		searchForPerson = new Person("John", "Black");
 		System.out.println("Index of \"John Black:\" = " + Arrays.binarySearch(personenArray, searchForPerson) + "\n");
-		System.out.println("Index of \"John Black:\" = "
-				+ Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
+		System.out.println("Index of \"John Black:\" = " + Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
 
 		// Suchen Sie in dem absteigend sortiertem Array nach der Person 'John Smith'
 		Comparator<Person> cmp = Comparator.reverseOrder();
 		System.out.println("Suchen im absteigend sortierten Array");
 		descendingSort(personenArray);
 		searchForPerson = new Person("John", "Smith");
-		System.out.println(
-				"Falsch! Index of \"John Smith:\" = " + Arrays.binarySearch(personenArray, searchForPerson) + "\n");
-		System.out.println("Index of \"John Smith:\" = "
-				+ Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
-		System.out.println(
-				"Index of \"John Smith:\" = " + Arrays.binarySearch(personenArray, searchForPerson, cmp) + "\n");
+		System.out.println("Falsch! Index of \"John Smith:\" = " + Arrays.binarySearch(personenArray, searchForPerson) + "\n");
+		System.out.println("Index of \"John Smith:\" = " + Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
+		System.out.println("Index of \"John Smith:\" = " + Arrays.binarySearch(personenArray, searchForPerson, cmp) + "\n");
 		searchForPerson = new Person("John", "Smith", "07.03.2019");
-		System.out.println("Falsch! Index of \"John Smith, 07.03.2019:\" = "
-				+ Arrays.binarySearch(personenArray, searchForPerson) + "\n");
-		System.out.println("Index of \"John Smith, 07.03.2019:\" = "
-				+ Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
-		System.out.println("Index of \"John Smith, 07.03.2019:\" = "
-				+ Arrays.binarySearch(personenArray, searchForPerson, cmp) + "\n");
+		System.out.println("Falsch! Index of \"John Smith, 07.03.2019:\" = " + Arrays.binarySearch(personenArray, searchForPerson) + "\n");
+		System.out.println("Index of \"John Smith, 07.03.2019:\" = " + Arrays.binarySearch(personenArray, searchForPerson, new PersonReverseComparator()) + "\n");
+		System.out.println("Index of \"John Smith, 07.03.2019:\" = " + Arrays.binarySearch(personenArray, searchForPerson, cmp) + "\n");
 
 		System.out.println("... that's it!\n");
 	}

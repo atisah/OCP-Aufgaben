@@ -5,7 +5,7 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class Person implements Comparable<Person> {
-	static private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+	static private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
 	private String vorname;
 	private String nachname;
@@ -24,7 +24,7 @@ public class Person implements Comparable<Person> {
 	public Person(String vorname, String nachname, String geburtsjahr) {
 		this(vorname, nachname);
 		try {
-			this.geburtsjahr = LocalDate.parse(geburtsjahr, dateTimeFormatter);
+			this.geburtsjahr = LocalDate.parse(geburtsjahr, dateFormatter);
 		} catch (Exception e) {
 			this.geburtsjahr = null;
 		}
@@ -32,7 +32,7 @@ public class Person implements Comparable<Person> {
 
 	@Override
 	public String toString() {
-		return nachname + ", " + vorname + ((geburtsjahr != null) ? ", *" + geburtsjahr.format(dateTimeFormatter) : "");
+		return nachname + ", " + vorname + ((geburtsjahr != null) ? ", *" + geburtsjahr.format(dateFormatter) : "");
 	}
 
 	@Override

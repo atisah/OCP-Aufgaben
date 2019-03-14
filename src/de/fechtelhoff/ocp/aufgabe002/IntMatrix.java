@@ -39,6 +39,10 @@ public class IntMatrix {
 		return intArray[x][y];
 	}
 
+	public boolean haveEqualDimensions(IntMatrix that) {
+		return (this.getX() == that.getX()) && (this.getY() == that.getY());
+	}
+
 	public IntMatrix transpose() {
 		IntMatrix resultMatrix;
 		if (x == y) {
@@ -56,7 +60,7 @@ public class IntMatrix {
 
 	public IntMatrix add(IntMatrix that) {
 		IntMatrix resultMatrix = null;
-		if ((this.getX() == that.getX()) && (this.getY() == that.getY())) {
+		if (haveEqualDimensions(that)) {
 			resultMatrix = new IntMatrix(x, y);
 			for (int i = 0; i < x; i++) {
 				for (int j = 0; j < y; j++) {
@@ -83,15 +87,16 @@ public class IntMatrix {
 	public boolean equals(Object obj) {
 		boolean result = false;
 		if (obj instanceof IntMatrix) {
-			IntMatrix that = (IntMatrix) obj;
-			if ((this.getX() == that.getX()) && (this.getY() == that.getY())) {
-				for (int i = 0; i < this.getX(); i++) {
-					for (int j = 0; j < this.getY(); j++) {
-						if (this.get(i, j) == that.get(i, j)) {
-							result = true;
-						} else {
-							return false;
-						}
+			return false;
+		}
+		IntMatrix that = (IntMatrix) obj;
+		if (haveEqualDimensions(that)) {
+			for (int i = 0; i < this.getX(); i++) {
+				for (int j = 0; j < this.getY(); j++) {
+					if (this.get(i, j) == that.get(i, j)) {
+						result = true;
+					} else {
+						return false;
 					}
 				}
 			}
@@ -100,10 +105,11 @@ public class IntMatrix {
 	}
 
 	public static IntMatrix getRandomMatrix(int x, int y, int maxValue) {
+		Random random = new Random();
 		IntMatrix intMatrix = new IntMatrix(x, y);
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				intMatrix.set(i, j, new Random().nextInt(maxValue));
+				intMatrix.set(i, j, random.nextInt(maxValue));
 			}
 		}
 		return intMatrix;

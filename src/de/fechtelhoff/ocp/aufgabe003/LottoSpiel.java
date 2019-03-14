@@ -12,7 +12,7 @@ public class LottoSpiel extends Lotto {
 	}
 
 	public void ziehen() {
-		ArrayUtil.initializeArrayWithRandom(lottoZahlen, anzahlKugelnGesamt);
+		lottoZahlenErzeugen();
 	}
 
 	public int richtige(Lotto tipp) {

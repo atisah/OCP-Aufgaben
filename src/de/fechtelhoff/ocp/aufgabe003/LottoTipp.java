@@ -7,7 +7,7 @@ public class LottoTipp extends Lotto {
 	}
 
 	public void abgeben() {
-		ArrayUtil.initializeArrayWithRandom(lottoZahlen, anzahlKugelnGesamt);
+		lottoZahlenErzeugen();
 	}
 
 	@Override
