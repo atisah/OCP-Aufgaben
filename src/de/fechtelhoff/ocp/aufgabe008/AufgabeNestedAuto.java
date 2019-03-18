@@ -53,6 +53,8 @@ class Rennwagen {
 public class AufgabeNestedAuto {
 
 	public static void main(String[] args) {
+		System.out.println("\nStarts here ...\n");
+
 		Rennwagen rw = new Rennwagen("Mercedes");
 
 		Rennwagen.Fahrer f = new Rennwagen.Fahrer("M.", "Schuhmacher");
@@ -62,5 +64,7 @@ public class AufgabeNestedAuto {
 
 		System.out.println(rw); // Zeile A -> Rennwagen Mercedes. Fahrer: M. Schuhmacher
 		System.out.println(m); // Zeile B -> Motor Type1 aus dem Rennwagen Mercedes
+
+		System.out.println("\n...that's it!\n");
 	}
 }
