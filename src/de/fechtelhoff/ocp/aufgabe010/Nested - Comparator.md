@@ -1,6 +1,6 @@
 # Aufgabe 'Innere Klassen - Comparator'
 
-Benötigt wird ein Comparator, mit dem zwei Strings nach ihrer Länge vergliechen werden können.
+Benötigt wird ein Comparator, mit dem zwei Strings nach ihrer Länge verglichen werden können.
 Definieren Sie den Comparator:
 
 1. Mit einer Toplevel-Klasse

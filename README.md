@@ -11,3 +11,9 @@
 1. **Aufgabe 009** (18.03.2019): *[Nested - Predicate - Personen](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe009 "Nested - Predicate - Personen")*  
 1. **Aufgabe 010** (18.03.2019): *[Nested - Comparator](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe010 "Nested - Comparator")*  
 1. **Aufgabe 011** (18.03.2019): *[Nested - Gebäude](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe011 "Nested - Gebäude")*  
+
+1. **Aufgabe 012** (19.03.2019): *[Functional Interfaces](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe012 "Functional Interfaces")*  
+1. **Aufgabe 013** (19.03.2019): *[Consumer - PutIntegers](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe013 "Consumer - PutIntegerse")*  
+1. **Aufgabe 014** (19.03.2019): *[Function - StringTransform](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe014 "Function - StringTransform")*  
+1. **Aufgabe 015** (19.03.2019): *[Supplier - Tracing](https://github.com/fechtelhoff/OCP-Aufgaben/tree/master/src/de/fechtelhoff/ocp/aufgabe015 "Supplier - Tracing")*  
+

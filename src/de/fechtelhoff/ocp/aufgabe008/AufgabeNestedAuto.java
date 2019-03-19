@@ -1,14 +1,28 @@
 package de.fechtelhoff.ocp.aufgabe008;
 
 class Rennwagen {
-	private String name;
+	private String hersteller;
 	private Motor motor;
 	private Fahrer fahrer;
 
 	class Motor {
+		private String type;
+
+		public Motor() {
+			this("Type1");
+		}
+
+		public Motor(String type) {
+			this.type = type;
+		}
+
+		public void setMotor(String type) {
+			this.type = type;
+		}
+
 		@Override
 		public String toString() {
-			return "Motor Type1 aus dem Rennwagen " + name;
+			return "Motor " + type + " aus dem Rennwagen " + hersteller;
 		}
 	}
 
@@ -30,10 +44,9 @@ class Rennwagen {
 		}
 	}
 
-	public Rennwagen(String name) {
-		this.name = name;
-		motor = new Motor();
-		fahrer = new Fahrer();
+	public Rennwagen(String hersteller) {
+		this.hersteller = hersteller;
+		this.motor = this.new Motor();
 	}
 
 	public void setFahrer(Fahrer fahrer) {
@@ -44,15 +57,21 @@ class Rennwagen {
 		return motor;
 	}
 
+	public void setMotor(String type) {
+		motor.setMotor(type);
+	}
+
 	@Override
 	public String toString() {
-		return "Rennwage " + name + ". Fahrer: " + fahrer;
+		return "Rennwage " + hersteller + ". Fahrer: " + fahrer;
 	}
 }
 
 public class AufgabeNestedAuto {
 
 	public static void main(String[] args) {
+		System.out.println("\nStarts here ...\n");
+
 		Rennwagen rw = new Rennwagen("Mercedes");
 
 		Rennwagen.Fahrer f = new Rennwagen.Fahrer("M.", "Schuhmacher");
@@ -62,5 +81,7 @@ public class AufgabeNestedAuto {
 
 		System.out.println(rw); // Zeile A -> Rennwagen Mercedes. Fahrer: M. Schuhmacher
 		System.out.println(m); // Zeile B -> Motor Type1 aus dem Rennwagen Mercedes
+
+		System.out.println("\n...that's it!\n");
 	}
 }
